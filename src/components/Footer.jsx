@@ -1,9 +1,9 @@
 import React from "react";
-import { VStack, HStack, Image, Text, Link, Box } from "@chakra-ui/react";
+import { VStack, HStack, Image, Text, Link } from "@chakra-ui/react";
 
 const Footer = () => {
   return (
-    <VStack gap={8} mt={12} pb={4}>
+    <VStack gap={8} pt={12} pb={4} bgColor={'alabaster'} w='full'>
       <Text fontSize={"20px"} color={"grey"}>
         Connect with Us
       </Text>

@@ -1,16 +1,17 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import { VStack, HStack, Image, Text, Heading, Box } from "@chakra-ui/react";
+import { VStack, HStack, Image, Text, Heading } from "@chakra-ui/react";
 import Card from "../components/Card";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import Slides from "../components/Slides";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import swiper from "../components/swiper.css";
+import "../components/swiper.css";
+import Next from "../components/Next";
 
 const Home = () => {
   return (
@@ -119,49 +120,7 @@ const Home = () => {
           </SwiperSlide>
         </Swiper>
       </VStack>
-      <VStack bgColor={"scarlet"} w="full" px={28} pt={8}>
-        <Heading fontSize={"45px"} fontWeight={"400"} color={"#FFF"}>
-          What's Next?
-        </Heading>
-        <HStack justifyContent={"space-between"} mt={8} w="full" pb={12}>
-          <VStack
-            bgColor={"#FFF"}
-            borderRadius={"23px"}
-            px={"45px"}
-            py={"20px"}
-            w="460px"
-            h="260px"
-          >
-            <Text fontSize={"28px"}>Download our App</Text>
-            <Link to="https://play.google.com/store/apps/details?id=com.cakelaya&hl=en_US">
-              <Image src="/images/androidButton.svg" alt="Android" />
-            </Link>
-            <Link>
-              <Image src="/images/appleButton.svg" alt="Apple" />
-            </Link>
-          </VStack>
-          <VStack
-            bgColor={"#FFF"}
-            borderRadius={"23px"}
-            px={"45px"}
-            pt={"60px"}
-            w="460px"
-            h="260px"
-          >
-            <Text fontSize={"28px"}>Get in Touch</Text>
-            <VStack alignItems={"start"} mt={4}>
-              <HStack gap={8}>
-                <Image src="/images/locationIcon.svg" alt="Address" />
-                <Text>F Block, Sector 22, Noida, U.P.</Text>
-              </HStack>
-              <HStack gap={8}>
-                <Image src="/images/emailIcon.svg" alt="Mail" />
-                <Text>support@cakelaya.com</Text>
-              </HStack>
-            </VStack>
-          </VStack>
-        </HStack>
-      </VStack>
+      <Next/>
       <Footer />
     </VStack>
   );

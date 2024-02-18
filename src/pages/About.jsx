@@ -1,6 +1,4 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import Next from "../components/Next";
 import {
   VStack,
   Heading,
@@ -8,14 +6,19 @@ import {
   UnorderedList,
   ListItem,
 } from "@chakra-ui/react";
+import { Helmet } from "react-helmet";
 
 const About = () => {
   return (
-    <VStack>
-      <Navbar />
+    <VStack pt={'90px'}>
+      <Helmet>
+        <title>Cakeलाया? - About Us</title>
+      </Helmet>
       <VStack bgColor={"alabaster"} px={24} py={12} gap={12}>
         <VStack bgcolor={"alabaster2"} gap={8}>
-          <Heading fontSize={'38px'} fontWeight={'400'}>About Us</Heading>
+          <Heading fontSize={"38px"} fontWeight={"400"}>
+            About Us
+          </Heading>
           <Text
             borderRadius={"24px"}
             boxShadow={"rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"}
@@ -40,7 +43,9 @@ const About = () => {
           </Text>
         </VStack>
         <VStack bgcolor={"alabaster2"} gap={8}>
-          <Heading fontSize={'38px'} fontWeight={'400'}>Work for Social Cause</Heading>
+          <Heading fontSize={"38px"} fontWeight={"400"}>
+            Work for Social Cause
+          </Heading>
           <Text
             borderRadius={"24px"}
             boxShadow={"rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"}
@@ -59,7 +64,9 @@ const About = () => {
           </Text>
         </VStack>
         <VStack bgcolor={"alabaster2"} gap={8}>
-          <Heading fontSize={'38px'} fontWeight={'400'}>Aim & Vision</Heading>
+          <Heading fontSize={"38px"} fontWeight={"400"}>
+            Aim & Vision
+          </Heading>
           <Text
             borderRadius={"24px"}
             boxShadow={"rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"}
@@ -100,7 +107,9 @@ const About = () => {
         </VStack>
 
         <VStack bgcolor={"alabaster2"} gap={8}>
-          <Heading fontSize={'38px'} fontWeight={'400'}>Key Values</Heading>
+          <Heading fontSize={"38px"} fontWeight={"400"}>
+            Key Values
+          </Heading>
           <VStack
             borderRadius={"24px"}
             boxShadow={"rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"}
@@ -150,7 +159,6 @@ const About = () => {
           </VStack>
         </VStack>
       </VStack>
-      <Next />
     </VStack>
   );
 };

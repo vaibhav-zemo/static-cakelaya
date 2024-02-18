@@ -8,15 +8,15 @@ import {
   ListItem,
   Highlight,
 } from "@chakra-ui/react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import Next from "../components/Next";
 import { Link } from "react-router-dom";
+import {Helmet} from "react-helmet";
 
 const Privacy = () => {
   return (
-    <VStack>
-      <Navbar />
+    <VStack pt={'90px'}>
+      <Helmet>
+        <title>Cakeलाया? - Privacy Policy</title>
+      </Helmet>
       <VStack px={24} py={12} gap={8}>
         <Heading fontSize={'38px'} fontWeight={'400'} >Privacy Policy</Heading>
 
@@ -200,8 +200,6 @@ const Privacy = () => {
           </VStack>
         </VStack>
       </VStack>
-      <Next />
-      <Footer />
     </VStack>
   );
 };

@@ -1,16 +1,17 @@
 import React from "react";
-import { VStack, HStack, Image, Text, Heading } from "@chakra-ui/react";
+import { VStack, HStack, Image, Text, Heading, Flex } from "@chakra-ui/react";
 
 const Slides = () => {
   return (
-    <HStack
-      justifyContent={"space-between"}
+    <Flex
+      justifyContent={{ base: "center", tablet: "space-between" }}
       bgColor={"#FFF"}
       w="full"
       borderRadius={"24px"}
       p={12}
-      position={"relative"}
       alignItems={"flex-end"}
+      flexDir={{ base: "column", tablet: "row" }}
+      rowGap={16}
     >
       <Image
         h="591px"
@@ -22,18 +23,20 @@ const Slides = () => {
         w="596px"
         alignItems={"start"}
         justifyContent={"space-between"}
-        _before={{
-          content: `""`,
-          bgImage: "/images/quoteIcon.svg",
-          height: "120px",
-          width: "151px",
-          bgRepeat: "no-repeat",
-          position: "absolute",
-          top: "100px",
-          left: "650px",
-        }}
+        position={"relative"}
       >
-        <HStack>
+        <HStack
+          _before={{
+            content: `""`,
+            bgImage: "/images/quoteIcon.svg",
+            height: "120px",
+            width: "151px",
+            bgRepeat: "no-repeat",
+            position: "absolute",
+            left: "-120px",
+            top: "-120px",
+          }}
+        >
           <Heading fontSize={"50px"} fontWeight={"400"} color={"scarlet"}>
             Customer
           </Heading>
@@ -72,7 +75,7 @@ const Slides = () => {
           </VStack>
         </HStack>
       </VStack>
-    </HStack>
+    </Flex>
   );
 };
 

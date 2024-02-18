@@ -8,61 +8,66 @@ import {
   MenuList,
   MenuItem,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 
 const Navbar = () => {
+  const location = useLocation();
+
   return (
     <HStack
       bgColor={"#FFF"}
       px={12}
-      mt={4}
+      py={4}
       justifyContent={"space-between"}
-      h={"60px"}
       w="full"
+      position={"absolute"}
+      top={0}
+      
+      boxShadow={location.pathname != '/' && "rgba(100, 100, 111, 0.2) 0px 0px 29px 0px"}
     >
       <Link to="/">
-        <Image src="/images/mainLogo.svg" alt="Logo" h={"60px"} />
+        <Image src="/images/mainLogo.svg" alt="Logo" h={{base: '30px', md: '45px', tablet: "60px"}} />
       </Link>
-      <HStack gap={8}>
+      <HStack gap={8} fontSize={{base: '14px', tablet: '22px'}} lineHeight={"26px"}>
         <Link to="/">
-          <Text fontSize={"22px"}>Home</Text>
+          <Text>Home</Text>
         </Link>
         <Link to="/about">
-          <Text fontSize={"22px"}>About</Text>
+          <Text>About</Text>
         </Link>
         <Menu>
           <MenuButton>
             <HStack>
-              <Text fontSize={"22px"}>More</Text>
-              <ChevronDownIcon fontSize={'22px'} />
+              <Text>More</Text>
+              <ChevronDownIcon />
             </HStack>
           </MenuButton>
           <MenuList>
             <MenuItem>
-              <Link to={'/shipping'} >
-                <Text fontSize={"22px"}>Shipping Policy</Text>
+              <Link to={"/shipping"}>
+                <Text>Shipping Policy</Text>
               </Link>
             </MenuItem>
             <MenuItem>
-              <Link to={'/return'} >
-                <Text fontSize={"22px"}>Return Policy</Text>
+              <Link to={"/return"}>
+                <Text>Return Policy</Text>
               </Link>
             </MenuItem>
             <MenuItem>
-              <Link to={'/privacy'}>
-                <Text fontSize={"22px"}>Privacy Policy</Text>
+              <Link to={"/privacy"}>
+                <Text>Privacy Policy</Text>
               </Link>
             </MenuItem>
             <MenuItem>
-              <Link to={'/terms'}>
-                <Text fontSize={"22px"}>T&C</Text>
+              <Link to={"/terms"}>
+                <Text>T&C</Text>
               </Link>
             </MenuItem>
           </MenuList>
         </Menu>
         <Link to="https://play.google.com/store/apps/details?id=com.cakelaya&hl=en_US">
-          <Text color={"scarlet"} fontSize={"22px"}>
+          <Text color={"scarlet"} >
             Download App
           </Text>
         </Link>

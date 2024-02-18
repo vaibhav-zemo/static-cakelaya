@@ -1,9 +1,7 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import { VStack, HStack, Image, Text, Heading } from "@chakra-ui/react";
+import { VStack, HStack, Image, Text, Heading, Flex } from "@chakra-ui/react";
 import Card from "../components/Card";
 import { Link } from "react-router-dom";
-import Footer from "../components/Footer";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import Slides from "../components/Slides";
@@ -11,45 +9,84 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "../components/swiper.css";
-import Next from "../components/Next";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   return (
     <VStack w="full" gap={0}>
-      <Navbar />
-      <HStack w="full" mt={16} justifyContent={"space-between"}>
-        <VStack w="585px" h="531px" pl={12} alignItems={"start"}>
-          <Text color={"scarlet"} fontSize={"22px"}>
+      <Helmet>
+        <title>Cakeलाया? - Home</title>
+      </Helmet>
+      <Flex
+        w="full"
+        h={{ base: "auto", tablet: "100vh" }}
+        pt={"90px"}
+        justifyContent={"space-between"}
+        alignItems={"center"}
+        flexDir={{ base: "column-reverse", md: "row" }}
+      >
+        <VStack w={ "585px"} pl={12} pb={8} alignItems={{base: 'center', md: "start"}}>
+          <Text
+            color={"scarlet"}
+            fontSize={{ base: "14px", md: "16px", tablet: "22px" }}
+          >
             Your Taste, Our Prioriy!
           </Text>
           <VStack alignItems={"start"}>
-            <Heading fontWeight={"700"} fontSize={"60px"}>
-              Best Cakes at{" "}
+            <Heading
+              fontWeight={"700"}
+              fontSize={{ base: "32px", md: "40px", tablet: "60px" }}
+            >
+              Best Cakes at
             </Heading>
             <HStack>
-              <Heading fontWeight={"700"} fontSize={"60px"} color={"scarlet"}>
+              <Heading
+                fontWeight={"700"}
+                fontSize={{ base: "32px", md: "40px", tablet: "60px" }}
+                color={"scarlet"}
+              >
                 Your Fingertips!
               </Heading>
-              <Image src="/images/cakeIcon1.svg" alt="Cake" w="89px" h="85px" />
+              <Image
+                src="/images/cakeIcon1.svg"
+                alt="Cake"
+                w={{ base: "31px", md: "49px", tablet: "89px" }}
+              />
             </HStack>
           </VStack>
           <HStack>
-            <Text fontSize={"32px"}>
+            <Text fontSize={{ base: "15px", md: "18px", tablet: "32px" }}>
               Order your favourite cakes at affordable price!
             </Text>
-            <Image src="/images/cakeIcon2.svg" alt="Cake" />
+            <Image
+              src="/images/cakeIcon2.svg"
+              alt="Cake"
+              w={{ base: "31px", md: "44px", tablet: "89px" }}
+            />
           </HStack>
-          <HStack mt={8}>
+          <HStack mt={{ base: 2, tablet: 8 }}>
             <Link to="https://play.google.com/store/apps/details?id=com.cakelaya&hl=en_US">
-              <Image src="/images/androidButton.svg" alt="Android" />
+              <Image
+                src="/images/androidButton.svg"
+                alt="Android"
+                w={{ base: "140px", tablet: "264px" }}
+              />
             </Link>
             <Link>
-              <Image src="/images/appleButton.svg" alt="Apple" />
+              <Image
+                src="/images/appleButton.svg"
+                alt="Apple"
+                w={{ base: "140px", tablet: "264px" }}
+              />
             </Link>
           </HStack>
         </VStack>
-        <Image src="/images/hero.svg" alt="Hero" />
-      </HStack>
+        <Image
+          src="/images/hero.svg"
+          alt="Hero"
+          w={{ base: "360px", tablet: "735px" }}
+        />
+      </Flex>
       <VStack
         w="full"
         px={12}
@@ -78,7 +115,7 @@ const Home = () => {
         <Text color={"grey"} fontSize={"32px"}>
           Your favourite cake delivery partner!
         </Text>
-        <HStack my={12} w="full" justifyContent={"space-between"}>
+        <Flex my={12} w="full" rowGap={8} justifyContent={{base: 'center', tablet: 'space-between'}} flexWrap={'wrap'} alignItems={'center'} >
           <Card
             img={"/images/cardImage1.svg"}
             text={"Interactive UI to make ordering easy!"}
@@ -94,7 +131,7 @@ const Home = () => {
             heading={"Best Quality"}
             text={"Order the tastiest cakes in the town!"}
           ></Card>
-        </HStack>
+        </Flex>
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
@@ -120,8 +157,6 @@ const Home = () => {
           </SwiperSlide>
         </Swiper>
       </VStack>
-      <Next/>
-      <Footer />
     </VStack>
   );
 };

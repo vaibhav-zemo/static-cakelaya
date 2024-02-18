@@ -1,5 +1,5 @@
 import React from "react";
-import { VStack, HStack, Image, Text, Heading } from "@chakra-ui/react";
+import { VStack, HStack, Image, Text, Heading, Flex } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 const Next = () => {
@@ -8,7 +8,15 @@ const Next = () => {
       <Heading fontSize={"45px"} fontWeight={"400"} color={"#FFF"}>
         What's Next?
       </Heading>
-      <HStack justifyContent={"space-between"} mt={8} w="full" pb={12}>
+      <Flex
+        rowGap={8}
+        justifyContent={{ base: "center", md: "space-between" }}
+        alignItems={'center'}
+        mt={8}
+        w="full"
+        pb={12}
+        flexDir={{base: 'column', tablet: 'row'}}
+      >
         <VStack
           bgColor={"#FFF"}
           borderRadius={"23px"}
@@ -45,7 +53,7 @@ const Next = () => {
             </HStack>
           </VStack>
         </VStack>
-      </HStack>
+      </Flex>
     </VStack>
   );
 };

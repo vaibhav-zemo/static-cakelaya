@@ -25,14 +25,19 @@ const Home = () => {
         alignItems={"center"}
         flexDir={{ base: "column-reverse", md: "row" }}
       >
-        <VStack w={ "585px"} pl={12} pb={8} alignItems={{base: 'center', md: "start"}}>
+        <VStack
+          w={{ base: "auto", tablet: "585px" }}
+          pl={{ base: 0, md: 12 }}
+          pb={8}
+          alignItems={{ base: "center", md: "start" }}
+        >
           <Text
             color={"scarlet"}
             fontSize={{ base: "14px", md: "16px", tablet: "22px" }}
           >
             Your Taste, Our Prioriy!
           </Text>
-          <VStack alignItems={"start"}>
+          <VStack alignItems={{ base: "center", md: "start" }}>
             <Heading
               fontWeight={"700"}
               fontSize={{ base: "32px", md: "40px", tablet: "60px" }}
@@ -89,11 +94,11 @@ const Home = () => {
       </Flex>
       <VStack
         w="full"
-        px={12}
+        px={{base: 4, tablet: 12}}
         bg={
           "linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('/images/cardBg.jpg')"
         }
-        pt={24}
+        pt={{base: 16, tablet: 24}}
         _before={{
           content: `""`,
           bgImage: "/images/downArrowButton.svg",
@@ -109,13 +114,27 @@ const Home = () => {
         position={"relative"}
         pb={8}
       >
-        <Heading color={"scarlet"} fontSize={"45px"}>
+        <Heading
+          color={"scarlet"}
+          fontSize={{ base: "18px", md: "22px", tablet: "45px" }}
+        >
           What we Offer?
         </Heading>
-        <Text color={"grey"} fontSize={"32px"}>
+        <Text
+          color={"grey"}
+          fontSize={{ base: "14px", md: "18px", tablet: "32px" }}
+        >
           Your favourite cake delivery partner!
         </Text>
-        <Flex my={12} w="full" rowGap={8} justifyContent={{base: 'center', tablet: 'space-between'}} flexWrap={'wrap'} alignItems={'center'} >
+        <Flex
+          my={12}
+          w="full"
+          columnGap={8}
+          rowGap={8}
+          justifyContent={{ base: "center", tablet: "space-between" }}
+          flexWrap={"wrap"}
+          alignItems={"center"}
+        >
           <Card
             img={"/images/cardImage1.svg"}
             text={"Interactive UI to make ordering easy!"}
@@ -146,12 +165,6 @@ const Home = () => {
           modules={[Autoplay, Pagination]}
           className="mySwiper"
         >
-          <SwiperSlide>
-            <Slides />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Slides />
-          </SwiperSlide>
           <SwiperSlide>
             <Slides />
           </SwiperSlide>

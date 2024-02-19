@@ -14,7 +14,7 @@ const About = () => {
       <Helmet>
         <title>Cakeलाया? - About Us</title>
       </Helmet>
-      <VStack bgColor={"alabaster"} px={24} py={12} gap={12}>
+      <VStack bgColor={"alabaster"} px={{base: 8, md: 16, tablet: 24}} py={12} gap={12}>
         <VStack bgcolor={"alabaster2"} gap={8}>
           <Heading fontSize={"38px"} fontWeight={"400"}>
             About Us

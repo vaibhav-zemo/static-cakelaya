@@ -55,6 +55,11 @@ const Navbar = () => {
               </Link>
             </MenuItem>
             <MenuItem>
+              <Link to={"/refund"}>
+                <Text>Refund Policy</Text>
+              </Link>
+            </MenuItem>
+            <MenuItem>
               <Link to={"/privacy"}>
                 <Text>Privacy Policy</Text>
               </Link>

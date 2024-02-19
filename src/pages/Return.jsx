@@ -13,7 +13,7 @@ const Return = () => {
       <Helmet>
         <title>Cakeलाया? - Return Policy</title>
       </Helmet>
-      <VStack px={24} py={12} gap={8}>
+      <VStack px={{base: 8, md: 16, tablet: 24}} py={12} gap={8}>
         <Heading fontSize={"38px"} fontWeight={"400"}>
           Return Policy
         </Heading>

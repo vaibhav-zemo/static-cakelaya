@@ -17,7 +17,7 @@ const Privacy = () => {
       <Helmet>
         <title>Cakeलाया? - Privacy Policy</title>
       </Helmet>
-      <VStack px={24} py={12} gap={8}>
+      <VStack px={{base: 8, md: 16, tablet: 24}} py={12} gap={8}>
         <Heading fontSize={'38px'} fontWeight={'400'} >Privacy Policy</Heading>
 
         <VStack

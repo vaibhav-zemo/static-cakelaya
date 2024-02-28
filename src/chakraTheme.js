@@ -7,7 +7,6 @@ const theme = extendTheme({
         alabaster: '#F9F9F9',
         alabaster2: '#FCFCFC',
         droveGray: '#626262',
-        
     },
     fonts: {
         body: 'Balsamiq Sans',

@@ -23,23 +23,64 @@ const Navbar = () => {
       w="full"
       position={"absolute"}
       top={0}
-      
-      boxShadow={location.pathname != '/' && "rgba(100, 100, 111, 0.2) 0px 0px 29px 0px"}
+      boxShadow={
+        location.pathname !== "/" && "rgba(100, 100, 111, 0.2) 0px 0px 29px 0px"
+      }
     >
       <Link to="/">
-        <Image src="/images/mainLogo.svg" alt="Logo" h={{base: '30px', md: '45px', tablet: "60px"}} />
+        <Image
+          src="/images/mainLogo.svg"
+          alt="Logo"
+          h={{ base: "30px", md: "45px", tablet: "60px" }}
+        />
       </Link>
-      <HStack gap={8} fontSize={{base: '14px', tablet: '22px'}} lineHeight={"26px"}>
+      <HStack
+        gap={8}
+        fontSize={{ base: "14px", tablet: "22px" }}
+        lineHeight={"26px"}
+      >
         <Link to="/">
           <Text>Home</Text>
-        </Link>
-        <Link to="/about">
-          <Text>About</Text>
         </Link>
         <Menu>
           <MenuButton>
             <HStack>
-              <Text>More</Text>
+              <Text>About</Text>
+              <ChevronDownIcon />
+            </HStack>
+          </MenuButton>
+          <MenuList>
+            <MenuItem>
+              <Link to={"/about"}>
+                <Text>About Us</Text>
+              </Link>
+            </MenuItem>
+            <MenuItem>
+              <Link to={"/aim"}>
+                <Text>Aim & Vision</Text>
+              </Link>
+            </MenuItem>
+            <MenuItem>
+              <Link to={"/work"}>
+                <Text>Work for Social Cause</Text>
+              </Link>
+            </MenuItem>
+            <MenuItem>
+              <Link to={"/values"}>
+                <Text>Key Values</Text>
+              </Link>
+            </MenuItem>
+            <MenuItem>
+              <Link to={"/terms"}>
+                <Text>T&C</Text>
+              </Link>
+            </MenuItem>
+          </MenuList>
+        </Menu>
+        <Menu>
+          <MenuButton>
+            <HStack>
+              <Text>Policy</Text>
               <ChevronDownIcon />
             </HStack>
           </MenuButton>
@@ -64,17 +105,10 @@ const Navbar = () => {
                 <Text>Privacy Policy</Text>
               </Link>
             </MenuItem>
-            <MenuItem>
-              <Link to={"/terms"}>
-                <Text>T&C</Text>
-              </Link>
-            </MenuItem>
           </MenuList>
         </Menu>
         <Link to="https://play.google.com/store/apps/details?id=com.cakelaya&hl=en_US">
-          <Text color={"scarlet"} >
-            Download App
-          </Text>
+          <Text color={"scarlet"}>Download App</Text>
         </Link>
       </HStack>
     </HStack>

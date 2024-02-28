@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   HStack,
   Image,
@@ -13,7 +13,8 @@ import { ChevronDownIcon } from "@chakra-ui/icons";
 
 const Navbar = () => {
   const location = useLocation();
-
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
+  const [isPolicyOpen, setIsPolicyOpen] = useState(false);
   return (
     <HStack
       bgColor={"#FFF"}
@@ -43,10 +44,13 @@ const Navbar = () => {
           <Text>Home</Text>
         </Link>
         <Menu>
-          <MenuButton>
+          <MenuButton onClick={() => setIsAboutOpen(!isAboutOpen)}>
             <HStack>
               <Text>About</Text>
-              <ChevronDownIcon />
+              <ChevronDownIcon
+                transform={isAboutOpen ? "rotate(180deg)" : "rotate(0deg)"}
+                transition={"transform 0.3s ease-in-out"}
+              />
             </HStack>
           </MenuButton>
           <MenuList>
@@ -78,10 +82,13 @@ const Navbar = () => {
           </MenuList>
         </Menu>
         <Menu>
-          <MenuButton>
+          <MenuButton onClick={() => setIsPolicyOpen(!isPolicyOpen)}>
             <HStack>
               <Text>Policy</Text>
-              <ChevronDownIcon />
+              <ChevronDownIcon
+                transform={isPolicyOpen ? "rotate(180deg)" : "rotate(0deg)"}
+                transition={"transform 0.3s ease-in-out"}
+              />
             </HStack>
           </MenuButton>
           <MenuList>

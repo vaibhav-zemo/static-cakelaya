@@ -35,7 +35,7 @@ const MobileNavbar = () => {
       w="full"
     >
       <Link to="/">
-        <Image src="/images/mainLogo.png" alt="Logo" h={"30px"} />
+        <Image src="/images/mainLogo.png" alt="Logo" h={"40px"} />
       </Link>
       <Image src="/images/hamburger.svg" onClick={onOpen} />
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>

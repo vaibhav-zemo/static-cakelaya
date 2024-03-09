@@ -1,4 +1,4 @@
-import React from "react";
+import { useContext } from "react";
 import { VStack, HStack, Image, Text, Heading, Flex } from "@chakra-ui/react";
 import Card from "../components/Card";
 import { Link } from "react-router-dom";
@@ -10,8 +10,10 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "../components/swiper.css";
 import { Helmet } from "react-helmet";
+import { CustomerContext } from "../CustomerContext";
 
 const Home = () => {
+  const { isCustomer } = useContext(CustomerContext);
   return (
     <VStack w="full" gap={0}>
       <Helmet>
@@ -24,6 +26,8 @@ const Home = () => {
         justifyContent={"space-between"}
         alignItems={"center"}
         flexDir={{ base: "column-reverse", md: "row" }}
+        pr={{ base: 0, md: "100px" }}
+        pb={4}
       >
         <VStack
           w={{ base: "auto", tablet: "585px" }}
@@ -35,14 +39,14 @@ const Home = () => {
             color={"scarlet"}
             fontSize={{ base: "14px", md: "16px", tablet: "22px" }}
           >
-            Your Taste, Our Prioriy!
+            Your {isCustomer ? "Taste" : "Growth"}, Our Priority!
           </Text>
           <VStack alignItems={{ base: "center", md: "start" }}>
             <Heading
               fontWeight={"700"}
               fontSize={{ base: "32px", md: "40px", tablet: "60px" }}
             >
-              Best Cakes at
+              {isCustomer ? "Best" : "Sell"} Cakes at
             </Heading>
             <HStack>
               <Heading
@@ -61,7 +65,9 @@ const Home = () => {
           </VStack>
           <HStack>
             <Text fontSize={{ base: "15px", md: "18px", tablet: "32px" }}>
-              Order your favourite cakes at affordable price!
+              {isCustomer
+                ? "Order your favourite cakes at affordable price!"
+                : "Sell your finest cakes at best-in-town price!"}
             </Text>
             <Image
               src="/images/cakeIcon2.svg"
@@ -87,18 +93,24 @@ const Home = () => {
           </HStack>
         </VStack>
         <Image
-          src="/images/hero.svg"
+          src={
+            isCustomer
+              ? "/images/customer-hero.svg"
+              : "/images/merchant-hero.svg"
+          }
           alt="Hero"
-          w={{ base: "360px", tablet: "735px" }}
+          w={{ base: "175px", md: "244px", tablet: "423px" }}
+          h="full"
+          mb={{ base: 4, md: 0 }}
         />
       </Flex>
       <VStack
         w="full"
-        px={{base: 4, tablet: 12}}
+        px={{ base: 4, tablet: 12 }}
         bg={
           "linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('/images/cardBg.jpg')"
         }
-        pt={{base: 16, tablet: 24}}
+        pt={{ base: 16, tablet: 24 }}
         _before={{
           content: `""`,
           bgImage: "/images/downArrowButton.svg",
@@ -124,7 +136,7 @@ const Home = () => {
           color={"grey"}
           fontSize={{ base: "14px", md: "18px", tablet: "32px" }}
         >
-          Your favourite cake delivery partner!
+          Your favourite cake {isCustomer ? "delivery" : "selling"} partner!
         </Text>
         <Flex
           my={12}
@@ -136,19 +148,43 @@ const Home = () => {
           alignItems={"center"}
         >
           <Card
-            img={"/images/cardImage1.svg"}
-            text={"Interactive UI to make ordering easy!"}
-            heading={"Easy to Order"}
+            img={
+              isCustomer
+                ? "/images/customer-card-1.svg"
+                : "/images/merchant-card-1.svg"
+            }
+            text={
+              isCustomer
+                ? "Interactive UI to make ordering easy!"
+                : "Boost Your Earnings: Partner With Us!"
+            }
+            heading={isCustomer ? "Easy to Order" : "Boost Your Sales"}
           ></Card>
           <Card
-            img={"/images/cardImage2.svg"}
-            text={"90 Minutes hassie-free delivery!"}
-            heading={"90 Minutes Delivery"}
+            img={
+              isCustomer
+                ? "/images/customer-card-2.svg"
+                : "/images/merchant-card-2.svg"
+            }
+            text={
+              isCustomer
+                ? "90 Minutes hassie-free delivery!"
+                : "Skyrocket Your Sales & Income With Us!"
+            }
+            heading={isCustomer ? "90 Minutes Delivery" : "Grow Your Business"}
           ></Card>
           <Card
-            img={"/images/cardImage3.svg"}
-            heading={"Best Quality"}
-            text={"Order the tastiest cakes in the town!"}
+            img={
+              isCustomer
+                ? "/images/customer-card-3.svg"
+                : "/images/merchant-card-3.svg"
+            }
+            text={
+              isCustomer
+                ? "Order the tastiest cakes in the town!"
+                : "Expand Your Reach: Discover Our App!"
+            }
+            heading={isCustomer ? "Best Quality" : "Promote Your Shop"}
           ></Card>
         </Flex>
         <Swiper

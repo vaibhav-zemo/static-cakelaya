@@ -1,4 +1,4 @@
-import React from "react";
+import {useContext} from "react";
 import {
   VStack,
   HStack,
@@ -7,10 +7,14 @@ import {
   Heading,
   Flex,
   useMediaQuery,
+  Box,
 } from "@chakra-ui/react";
+import { CustomerContext } from "../CustomerContext";
 
 const Slides = () => {
   const [isMobile] = useMediaQuery("(max-width: 990px)");
+  const { isCustomer } = useContext(CustomerContext);
+
   return (
     <Flex
       justifyContent={{ base: "center", tablet: "space-between" }}
@@ -22,12 +26,16 @@ const Slides = () => {
       alignItems={{ base: "center", tablet: "flex-end" }}
       flexDir={{ base: "column", tablet: "row" }}
       rowGap={16}
+      h="723px"
     >
-      <Image
-        w={{ base: "215px", md: "252px", tablet: "496px" }}
-        src="/images/testimonial.svg"
-        alt="testimonial"
-      />
+      <VStack mt={{base: '100px', tablet: '0'}} h={{ base: "250px", tablet: "full" }} justifyContent={"center"}>
+        <Image
+          w={{ base: "298px", md: "274px", tablet: "550px" }}
+          src="/images/testimonial.svg"
+          alt="testimonial"
+          h={"460px"}
+        />
+      </VStack>
       <VStack
         w={{ base: "auto", md: "596px" }}
         h="auto"
@@ -52,7 +60,7 @@ const Slides = () => {
               left: isMobile ? "-50px" : "-140px",
             }}
           >
-            Customer
+            {isCustomer ? "Customer" : "Merchant"}
           </Heading>
           <Heading
             fontSize={{ base: "22px", md: "32px", tablet: "50px" }}
@@ -74,13 +82,18 @@ const Slides = () => {
           cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
           id est laborum.
         </Text>
-        <HStack gap={4} mt={24} mb={4}>
-          <Image
-            src="/images/customerDP.svg"
+        <HStack gap={4} mt={12} pb={12} mb={4}>
+          <Box
+            w={{ base: "50px", md: "60px", tablet: "79px" }}
+            h={{ base: "50px", md: "60px", tablet: "78px" }}
             border={"2px solid #ff1616"}
+            bgImage={"/images/customer-4.png"}
+            bgPos={"center"}
+            bgRepeat={"no-repeat"}
+            bgSize={"cover"}
             borderRadius={"50%"}
-            w={{ base: "50px", md: "60px", tablet: "80px" }}
-          />
+            p={1}
+          ></Box>
           <VStack gap={0} alignItems={"start"}>
             <Heading
               fontWeight={"400"}
@@ -89,7 +102,7 @@ const Slides = () => {
               Gretchen Vaccaro
             </Heading>
             <Text fontSize={{ base: "12px", md: "15px", tablet: "16px" }}>
-              Customer
+              {isCustomer ? "Customer" : "Merchant"}
             </Text>
             <HStack alignItems={"center"}>
               <Image src="/images/star.svg" />

@@ -75,7 +75,7 @@ const Shipping = () => {
                 to={"mailto:support@cakelaya.com"}
                 style={{ color: "#FF1616" }}
               >
-                support@cakelaya.com.
+                support@cakelaya.com
               </Link>
               . Our customer support team is available to assist you and will do
               our best to facilitate communication between you and the relevant
@@ -107,7 +107,7 @@ const Shipping = () => {
                 to={"mailto:support@cakelaya.com"}
                 style={{ color: "#FF1616" }}
               >
-                support@cakelaya.com.
+                support@cakelaya.com
               </Link>
               . We are committed to providing excellent customer service and
               ensuring your satisfaction with every purchase.

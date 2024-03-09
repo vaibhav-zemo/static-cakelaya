@@ -54,7 +54,7 @@ const Return = () => {
                 to={"mailto:support@cakelaya.com"}
                 style={{ color: "#FF1616" }}
               >
-                support@cakelaya.com.
+                support@cakelaya.com
               </Link>
                to raise a refund query. We take product quality concerns
               seriously and will work with you to address the issue promptly.
@@ -72,7 +72,7 @@ const Return = () => {
                 to={"mailto:support@cakelaya.com"}
                 style={{ color: "#FF1616" }}
               >
-                support@cakelaya.com.
+                support@cakelaya.com
               </Link>
               . Our customer support team is here to help address any inquiries
               or issues you may have. Thank you for choosing Cakeलाया ?. We look

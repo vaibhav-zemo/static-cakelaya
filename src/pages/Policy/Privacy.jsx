@@ -185,7 +185,7 @@ const Privacy = () => {
                 to={"mailto:support@cakelaya.com"}
                 style={{ color: "#FF1616" }}
               >
-                support@cakelaya.com.
+                support@cakelaya.com
               </Link>
             </Text>
           </VStack>

@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, useMediaQuery } from "@chakra-ui/react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -10,7 +9,7 @@ const Default = () => {
   const [isMobile] = useMediaQuery("(max-width: 480px)");
   return (
     <Box>
-      {isMobile ? <MobileNavbar /> : <Navbar />}
+      {isMobile ? <MobileNavbar /> : <Navbar/>}
       <Outlet />
       <Next />
       <Footer />

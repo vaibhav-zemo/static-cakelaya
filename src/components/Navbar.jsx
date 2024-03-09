@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useContext } from "react";
 import {
   HStack,
   Image,
@@ -10,11 +10,11 @@ import {
 } from "@chakra-ui/react";
 import { Link, useLocation } from "react-router-dom";
 import { ChevronDownIcon } from "@chakra-ui/icons";
+import { CustomerContext } from "../CustomerContext";
 
 const Navbar = () => {
   const location = useLocation();
-  const [isAboutOpen, setIsAboutOpen] = useState(false);
-  const [isPolicyOpen, setIsPolicyOpen] = useState(false);
+  const { isCustomer, setIsCustomer } = useContext(CustomerContext);
   return (
     <HStack
       bgColor={"#FFF"}
@@ -30,7 +30,7 @@ const Navbar = () => {
     >
       <Link to="/">
         <Image
-          src="/images/mainLogo.svg"
+          src="/images/mainLogo.png"
           alt="Logo"
           h={{ base: "30px", md: "45px", tablet: "60px" }}
         />
@@ -44,79 +44,89 @@ const Navbar = () => {
           <Text>Home</Text>
         </Link>
         <Menu>
-          <MenuButton onClick={() => setIsAboutOpen(!isAboutOpen)}>
-            <HStack>
-              <Text>About</Text>
-              <ChevronDownIcon
-                transform={isAboutOpen ? "rotate(180deg)" : "rotate(0deg)"}
-                transition={"transform 0.3s ease-in-out"}
-              />
-            </HStack>
-          </MenuButton>
-          <MenuList>
-            <MenuItem>
-              <Link to={"/about"}>
-                <Text>About Us</Text>
-              </Link>
-            </MenuItem>
-            <MenuItem>
-              <Link to={"/aim"}>
-                <Text>Aim & Vision</Text>
-              </Link>
-            </MenuItem>
-            <MenuItem>
-              <Link to={"/work"}>
-                <Text>Work for Social Cause</Text>
-              </Link>
-            </MenuItem>
-            <MenuItem>
-              <Link to={"/values"}>
-                <Text>Key Values</Text>
-              </Link>
-            </MenuItem>
-            <MenuItem>
-              <Link to={"/terms"}>
-                <Text>T&C</Text>
-              </Link>
-            </MenuItem>
-          </MenuList>
+          {({ isOpen }) => (
+            <>
+              <MenuButton isActive={isOpen}>
+                <HStack>
+                  <Text>About</Text>
+                  <ChevronDownIcon
+                    transform={isOpen ? "rotate(180deg)" : "rotate(0deg)"}
+                    transition={"transform 0.3s ease-in-out"}
+                  />
+                </HStack>
+              </MenuButton>
+              <MenuList>
+                <MenuItem>
+                  <Link to={"/about"}>
+                    <Text>About Us</Text>
+                  </Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link to={"/aim"}>
+                    <Text>Aim & Vision</Text>
+                  </Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link to={"/work"}>
+                    <Text>Work for Social Cause</Text>
+                  </Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link to={"/values"}>
+                    <Text>Key Values</Text>
+                  </Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link to={"/terms"}>
+                    <Text>T&C</Text>
+                  </Link>
+                </MenuItem>
+              </MenuList>
+            </>
+          )}
         </Menu>
         <Menu>
-          <MenuButton onClick={() => setIsPolicyOpen(!isPolicyOpen)}>
-            <HStack>
-              <Text>Policy</Text>
-              <ChevronDownIcon
-                transform={isPolicyOpen ? "rotate(180deg)" : "rotate(0deg)"}
-                transition={"transform 0.3s ease-in-out"}
-              />
-            </HStack>
-          </MenuButton>
-          <MenuList>
-            <MenuItem>
-              <Link to={"/shipping"}>
-                <Text>Shipping Policy</Text>
-              </Link>
-            </MenuItem>
-            <MenuItem>
-              <Link to={"/return"}>
-                <Text>Return Policy</Text>
-              </Link>
-            </MenuItem>
-            <MenuItem>
-              <Link to={"/refund"}>
-                <Text>Refund Policy</Text>
-              </Link>
-            </MenuItem>
-            <MenuItem>
-              <Link to={"/privacy"}>
-                <Text>Privacy Policy</Text>
-              </Link>
-            </MenuItem>
-          </MenuList>
+          {({ isOpen }) => (
+            <>
+              <MenuButton isActive={isOpen}>
+                <HStack>
+                  <Text>Policy</Text>
+                  <ChevronDownIcon
+                    transform={isOpen ? "rotate(180deg)" : "rotate(0deg)"}
+                    transition={"transform 0.3s ease-in-out"}
+                  />
+                </HStack>
+              </MenuButton>
+              <MenuList>
+                <MenuItem>
+                  <Link to={"/shipping"}>
+                    <Text>Shipping Policy</Text>
+                  </Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link to={"/return"}>
+                    <Text>Return Policy</Text>
+                  </Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link to={"/refund"}>
+                    <Text>Refund Policy</Text>
+                  </Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link to={"/privacy"}>
+                    <Text>Privacy Policy</Text>
+                  </Link>
+                </MenuItem>
+              </MenuList>
+            </>
+          )}
         </Menu>
-        <Link to="https://play.google.com/store/apps/details?id=com.cakelaya&hl=en_US">
-          <Text color={"scarlet"}>Download App</Text>
-        </Link>
+        <HStack cursor={"pointer"} onClick={() => setIsCustomer(!isCustomer)}>
+          <Text color={"scarlet"}>
+            {isCustomer ? "Become Seller" : "Customer Site"}
+          </Text>
+        </HStack>
       </HStack>
     </HStack>
   );

@@ -43,7 +43,7 @@ const Refund = () => {
                 to={"mailto:support@cakelaya.com"}
                 style={{ color: "#FF1616" }}
               >
-                support@cakelaya.com.
+                support@cakelaya.com
               </Link>
                as soon as possible, and we will do our best to accommodate your
               request!
@@ -74,7 +74,7 @@ const Refund = () => {
                 to={"mailto:support@cakelaya.com"}
                 style={{ color: "#FF1616" }}
               >
-                support@cakelaya.com.
+                support@cakelaya.com
               </Link>
               . Our customer support team is here to help address any inquiries
               or issues you may have.

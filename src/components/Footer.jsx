@@ -1,5 +1,5 @@
 import React from "react";
-import { VStack, HStack, Image, Text, Link } from "@chakra-ui/react";
+import { VStack, HStack, Text } from "@chakra-ui/react";
 import SocialMediaButton from "./SocialMediaButton";
 
 const Footer = () => {
@@ -26,7 +26,7 @@ const Footer = () => {
         />
       </HStack>
       <Text fontSize={{ base: "12px", tablet: "16px" }} textAlign={'center'}>
-        Copyright © 2023 | ZESTEASE FOODTECH PRIVATE LIMITED® | All Rights
+        Copyright © 2023 | ZESTEASE FOODTECH PRIVATE LIMITED ® | All Rights
         Reserved
       </Text>
     </VStack>

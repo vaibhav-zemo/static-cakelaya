@@ -36,8 +36,8 @@ const Next = () => {
         <VStack
           bgColor={"#FFF"}
           borderRadius={"23px"}
-          px={{base: 8, tablet: "45px"}}
-          pt={{base: 8, tablet: "60px"}}
+          px={{base: 8, tablet: "35px"}}
+          pt={{base: 4, tablet: "60px"}}
           w={{base: '300px', tablet: "460px"}}
           h={{base: '155px', tablet:  "260px"}}
         >
@@ -45,7 +45,7 @@ const Next = () => {
           <VStack alignItems={"start"} mt={4}>
             <HStack gap={8}>
               <Image src="/images/locationIcon.svg" alt="Address" w={{base: '16px', md: '18', tablet: '35px'}} />
-              <Text fontSize={{base: '13px', tablet: '18px'}} color={"grey"}>F Block, Sector 22, Noida, U.P.</Text>
+              <Text fontSize={{base: '13px', tablet: '18px'}} color={"grey"}>F Block, Sector 22, Noida, U.P. (201301)</Text>
             </HStack>
             <HStack gap={8}>
               <Image src="/images/emailIcon.svg" alt="Mail" w={{base: '16px', md: '18', tablet: '35px'}} />

@@ -25,6 +25,25 @@ const theme = extendTheme({
         '4xl': '2rem', // 32px          | H2 / Mobile H1
         '5xl': '2.25rem', // 36px       | H1
     },
+    components: {
+        Accordion: {
+            baseStyle: {
+                button: {
+                    _focus: {
+                        bg: 'none'
+                    },
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                },
+                container: {
+                    border: 'none'
+                },
+                icon: {
+                    ml: 4,
+                }
+            }
+        },
+    },
     breakpoints: {
         sm: '360px',
         mob: '480px',

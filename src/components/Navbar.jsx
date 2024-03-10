@@ -67,18 +67,13 @@ const Navbar = () => {
                   </Link>
                 </MenuItem>
                 <MenuItem>
-                  <Link to={"/work"}>
-                    <Text>Work for Social Cause</Text>
-                  </Link>
-                </MenuItem>
-                <MenuItem>
                   <Link to={"/values"}>
                     <Text>Key Values</Text>
                   </Link>
                 </MenuItem>
                 <MenuItem>
-                  <Link to={"/terms"}>
-                    <Text>T&C</Text>
+                  <Link to={"/work"}>
+                    <Text>Work for Social Cause</Text>
                   </Link>
                 </MenuItem>
               </MenuList>
@@ -99,8 +94,13 @@ const Navbar = () => {
               </MenuButton>
               <MenuList>
                 <MenuItem>
-                  <Link to={"/shipping"}>
-                    <Text>Shipping Policy</Text>
+                  <Link to={"/privacy"}>
+                    <Text>Privacy Policy</Text>
+                  </Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link to={"/refund"}>
+                    <Text>Refund & Cancellation Policy</Text>
                   </Link>
                 </MenuItem>
                 <MenuItem>
@@ -109,13 +109,13 @@ const Navbar = () => {
                   </Link>
                 </MenuItem>
                 <MenuItem>
-                  <Link to={"/refund"}>
-                    <Text>Refund Policy</Text>
+                  <Link to={"/shipping"}>
+                    <Text>Shipping Policy</Text>
                   </Link>
                 </MenuItem>
                 <MenuItem>
-                  <Link to={"/privacy"}>
-                    <Text>Privacy Policy</Text>
+                  <Link to={"/terms"}>
+                    <Text>Terms of Use</Text>
                   </Link>
                 </MenuItem>
               </MenuList>

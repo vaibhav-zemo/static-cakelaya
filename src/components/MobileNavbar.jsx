@@ -9,13 +9,14 @@ import {
   useDisclosure,
   VStack,
   Text,
-  Menu,
-  MenuItem,
-  MenuButton,
-  MenuList,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
+  Box,
 } from "@chakra-ui/react";
 import { Link, useLocation } from "react-router-dom";
-import { ChevronDownIcon } from "@chakra-ui/icons";
 import { CustomerContext } from "../CustomerContext";
 
 const MobileNavbar = () => {
@@ -51,88 +52,61 @@ const MobileNavbar = () => {
               <Link to="/" onClick={onClose}>
                 Home
               </Link>
-              <Menu>
-                {({ isOpen }) => (
-                  <>
-                    <MenuButton isActive={isOpen}>
-                      <HStack>
-                        <Text>About</Text>
-                        <ChevronDownIcon
-                          transform={isOpen ? "rotate(180deg)" : "rotate(0deg)"}
-                          transition={"transform 0.3s ease-in-out"}
-                        />
-                      </HStack>
-                    </MenuButton>
-                    <MenuList onClick={onClose}>
-                      <MenuItem>
-                        <Link to={"/about"}>
-                          <Text>About Us</Text>
-                        </Link>
-                      </MenuItem>
-                      <MenuItem>
-                        <Link to={"/aim"}>
-                          <Text>Aim & Vision</Text>
-                        </Link>
-                      </MenuItem>
-                      <MenuItem>
-                        <Link to={"/work"}>
-                          <Text>Work for Social Cause</Text>
-                        </Link>
-                      </MenuItem>
-                      <MenuItem>
-                        <Link to={"/values"}>
-                          <Text>Key Values</Text>
-                        </Link>
-                      </MenuItem>
-                      <MenuItem>
-                        <Link to={"/terms"}>
-                          <Text>T&C</Text>
-                        </Link>
-                      </MenuItem>
-                    </MenuList>
-                  </>
-                )}
-              </Menu>
-              <Menu>
-                {({ isOpen }) => (
-                  <>
-                    <MenuButton isActive={isOpen}>
-                      <HStack>
-                        <Text>Policy</Text>
-                        <ChevronDownIcon
-                          transform={isOpen ? "rotate(180deg)" : "rotate(0deg)"}
-                          transition={"transform 0.3s ease-in-out"}
-                        />
-                      </HStack>
-                    </MenuButton>
-                    <MenuList onClick={onClose}>
-                      <MenuItem>
-                        <Link to={"/shipping"}>
-                          <Text>Shipping Policy</Text>
-                        </Link>
-                      </MenuItem>
-                      <MenuItem>
-                        <Link to={"/return"}>
-                          <Text>Return Policy</Text>
-                        </Link>
-                      </MenuItem>
-                      <MenuItem>
-                        <Link to={"/refund"}>
-                          <Text>Refund Policy</Text>
-                        </Link>
-                      </MenuItem>
-                      <MenuItem>
-                        <Link to={"/privacy"}>
-                          <Text>Privacy Policy</Text>
-                        </Link>
-                      </MenuItem>
-                    </MenuList>
-                  </>
-                )}
-              </Menu>
+              <Accordion allowToggle>
+                <AccordionItem>
+                  <AccordionButton>
+                    <Box>About</Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                  <AccordionPanel onClick={onClose}>
+                    <VStack alignItems={'start'} >
+                      <Link to={"/about"}>
+                        <Text>About Us</Text>
+                      </Link>
+                      <Link to={"/aim"}>
+                        <Text>Aim & Vision</Text>
+                      </Link>
+                      <Link to={"/values"}>
+                        <Text>Key Values</Text>
+                      </Link>
+                      <Link to={"/work"}>
+                        <Text>Work for Social Cause</Text>
+                      </Link>
+                    </VStack>
+                  </AccordionPanel>
+                </AccordionItem>
+                <AccordionItem>
+                  <AccordionButton>
+                    <Box>Policy</Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                  <AccordionPanel onClick={onClose} >
+                    <VStack alignItems={"start"}>
+                      <Link to={"/privacy"}>
+                        <Text>Privacy Policy</Text>
+                      </Link>
+                      <Link to={"/refund"}>
+                        <Text>Refund & Cancellation Policy</Text>
+                      </Link>
+                      <Link to={"/return"}>
+                        <Text>Return Policy</Text>
+                      </Link>
+                      <Link to={"/shipping"}>
+                        <Text>Shipping Policy</Text>
+                      </Link>
+                      <Link to={"/terms"}>
+                        <Text>Terms of Use</Text>
+                      </Link>
+                    </VStack>
+                  </AccordionPanel>
+                </AccordionItem>
+              </Accordion>
               <VStack
                 cursor={"pointer"}
-                onClick={() => {setIsCustomer(!isCustomer); onClose()}}
+                onClick={() => {
+                  setIsCustomer(!isCustomer);
+                  onClose();
+                }}
               >
                 <Text color={"scarlet"}>
                   {isCustomer ? "Become Seller" : "Customer Site"}

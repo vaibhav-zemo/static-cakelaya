@@ -9,16 +9,18 @@ import {
   Highlight,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 
 const Privacy = () => {
   return (
-    <VStack pt={'90px'}>
+    <VStack pt={"90px"}>
       <Helmet>
         <title>Cakeलाया? - Privacy Policy</title>
       </Helmet>
-      <VStack px={{base: 8, md: 16, tablet: 24}} py={12} gap={8}>
-        <Heading fontSize={'38px'} fontWeight={'400'} >Privacy Policy</Heading>
+      <VStack px={{ base: 8, md: 16, tablet: 24 }} py={12} gap={8}>
+        <Heading fontSize={"38px"} fontWeight={"400"}>
+          Privacy Policy
+        </Heading>
 
         <VStack
           borderRadius={"24px"}
@@ -38,20 +40,30 @@ const Privacy = () => {
             information in accordance with this Privacy Policy. This Privacy
             Policy is incorporated into and subject to the Terms of Use.
           </Text>
-          <VStack alignItems={"start"} color={"droveGray"}>
-            <Text>
+          <VStack alignItems={"start"} >
+            <Text fontSize={"22px"} fontWeight={500}>
               What personal information do we collect from the people who visit
-              our blog, website or app? When ordering or registering on our
-              site, as appropriate, you may be asked to enter your name, email
-              address, receiver name, delivery address, billing address, phone
-              number or other details to help you with your experience. How do
-              we use your information? We may use the information we collect
-              from you when you register, make a purchase, sign up for our
-              newsletter, respond to a survey or marketing communication, surf
-              the website, or use certain other site features in the following
-              ways:
+              our blog, website or app?
             </Text>
-            <UnorderedList>
+            <Text color={"droveGray"}>
+              When ordering or registering on our site, as appropriate, you may
+              be asked to enter your name, email address, receiver name,
+              delivery address, billing address, phone number or other details
+              to help you with your experience.
+            </Text>
+          </VStack>
+
+          <VStack alignItems={'start'} >
+            <Text fontSize={"22px"} fontWeight={500}>
+              How do we use your information?
+            </Text>
+            <Text color={"droveGray"}>
+              We may use the information we collect from you when you register,
+              make a purchase, sign up for our newsletter, respond to a survey
+              or marketing communication, surf the website, or use certain other
+              site features in the following ways:
+            </Text>
+            <UnorderedList color={"droveGray"}>
               <ListItem>
                 To personalize your experience and to allow us to deliver the
                 type of content and product offerings in which you are most
@@ -159,7 +171,7 @@ const Privacy = () => {
               <HStack>
                 <Text>Link:</Text>
                 <Link to="https://support.google.com/adwordspolicy/answer/1316548?hl=en">
-                  <Text color="scarlet">
+                  <Text color="scarlet" wordBreak={'break-word'} >
                     https://support.google.com/adwordspolicy/answer/1316548?hl=en
                   </Text>
                 </Link>

@@ -9,7 +9,7 @@ const Work = () => {
         <title>Cakeलाया? - Work for Social Cause</title>
       </Helmet>
       <VStack px={{ base: 8, md: 16, tablet: 24 }} py={12} gap={8}>
-        <Heading fontSize={"38px"} fontWeight={"400"}>
+        <Heading fontSize={"38px"} fontWeight={"400"} textAlign={'center'} >
           Work for Social Cause
         </Heading>
 

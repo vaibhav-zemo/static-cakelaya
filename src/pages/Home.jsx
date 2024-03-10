@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { VStack, HStack, Image, Text, Heading, Flex } from "@chakra-ui/react";
 import Card from "../components/Card";
 import { Link } from "react-router-dom";
@@ -14,6 +14,15 @@ import { CustomerContext } from "../CustomerContext";
 
 const Home = () => {
   const { isCustomer } = useContext(CustomerContext);
+  const heroRef = useRef(null);
+
+  const handleButtonClick = () => {
+    window.scrollTo({
+      top: heroRef?.current?.scrollHeight + 39,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <VStack w="full" gap={0}>
       <Helmet>
@@ -28,6 +37,7 @@ const Home = () => {
         flexDir={{ base: "column-reverse", md: "row" }}
         pr={{ base: 0, md: "100px" }}
         pb={4}
+        ref={heroRef}
       >
         <VStack
           w={{ base: "auto", tablet: "585px" }}
@@ -111,21 +121,22 @@ const Home = () => {
           "linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('/images/cardBg.jpg')"
         }
         pt={{ base: 16, tablet: 24 }}
-        _before={{
-          content: `""`,
-          bgImage: "/images/downArrowButton.svg",
-          bgRepeat: "no-repeat",
-          bgPosition: "center",
-          borderRadius: "30px",
-          boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
-          h: "64px",
-          w: "45px",
-          position: "absolute",
-          top: "-33px",
-        }}
         position={"relative"}
         pb={8}
       >
+        <VStack
+          bgImage={"/images/downArrowButton.svg"}
+          bgRepeat={"no-repeat"}
+          bgPosition={"center"}
+          borderRadius={"30px"}
+          boxShadow={"rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"}
+          h="64px"
+          w="45px"
+          position={"absolute"}
+          top={"-32px"}
+          cursor={"pointer"}
+          onClick={handleButtonClick}
+        ></VStack>
         <Heading
           color={"scarlet"}
           fontSize={{ base: "18px", md: "22px", tablet: "45px" }}
@@ -155,10 +166,10 @@ const Home = () => {
             }
             text={
               isCustomer
-                ? "Interactive UI to make ordering easy!"
+                ? "Seamless Ordering Via Our App!"
                 : "Boost Your Earnings: Partner With Us!"
             }
-            heading={isCustomer ? "Easy to Order" : "Boost Your Sales"}
+            heading={isCustomer ? "Easy Ordering" : "Boost Your Sales"}
           ></Card>
           <Card
             img={
@@ -168,10 +179,10 @@ const Home = () => {
             }
             text={
               isCustomer
-                ? "90 Minutes hassie-free delivery!"
+                ? "Swift Dispatch: Get It Quick!"
                 : "Skyrocket Your Sales & Income With Us!"
             }
-            heading={isCustomer ? "90 Minutes Delivery" : "Grow Your Business"}
+            heading={isCustomer ? "Fast Delivery" : "Grow Your Business"}
           ></Card>
           <Card
             img={
@@ -181,10 +192,10 @@ const Home = () => {
             }
             text={
               isCustomer
-                ? "Order the tastiest cakes in the town!"
+                ? "Trendy Cakes, Unbeatable Prices!"
                 : "Expand Your Reach: Discover Our App!"
             }
-            heading={isCustomer ? "Best Quality" : "Promote Your Shop"}
+            heading={isCustomer ? "Trending Cakes" : "Promote Your Shop"}
           ></Card>
         </Flex>
         <Swiper
